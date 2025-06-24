@@ -13,8 +13,53 @@
 <script src="https://kit.fontawesome.com/3ff7c0e8b8.js" crossorigin="anonymous"></script>
 
 </head>
+<style>
+  .overlay {
+    position: fixed;
+    display: none;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+  }
+
+  .overlay.show {
+    display: flex;
+  }
+
+  .overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 30px rgba(255,255,255,0.3);
+  }
+
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+  }
+
+  .back-button:hover {
+    background: #eee;
+  }
+</style>
+
 <body>
     
+<div class="overlay" id="fullscreenOverlay" onclick="closeFullscreen()">
+  <button class="back-button" onclick="closeFullscreen()">← Back</button>
+  <img id="fullscreenImage" src="" alt="Fullscreen View">
+</div>
 <div class="header">
     <div class="container">
 
@@ -26,8 +71,8 @@
         <nav>
             <ul id="MenuItems">
                 <li><a href="">Home</a></li>
-                <li><a href="#featured">Product</a></li>
-                <li><a href="#invite">About</a></li>
+                <li><a href="#Event">Event Place</a></li>
+                <li><a href="#featured">Attire</a></li>
                 <li><a href="">Account</a></li>
         </nav>
         <img src="images/cart.png" width="30px" height="30px">
@@ -45,7 +90,7 @@
         <div class="col-2"> 
             <!-- rena's picture -->
 
-            <img src="rena-1.jpg" >
+            <img src="rena-1.jpg" onclick="openFullscreen(this.src)" >
         </div>
     </div>
     </div>
@@ -54,10 +99,11 @@
 <!-- features Categories EVENT PLACE--->
  
     <div class="categories">
+        <div id="Event"> 
         <BR><h2 class="title"> EVENT PLACE </h2>
             <div class="event">
                <h1> GLASS GARDEN </h1>
-            <p>Warmly invite you to visit at <br>257 Evangelista Ave. Santolan, Pasig City, Metro Manila. <br> Experience firsthand 
+            <p>Warmly invite you to visit at <br><p style="color: red;"> 257 Evangelista Ave. Santolan, Pasig City, Metro Manila. </p> Experience firsthand 
                 the unique blend of aesthetic and functionality <br> that make the Glass Garden Events Venue the perfect <BR>
                     setting for your unforgettable event.
             <br>
@@ -66,34 +112,44 @@
                 <br>
                 <br>
                 </div>
+                
         <div class="small-container">
             <div class="row">
-
-            <div class="col-3">
-             
-
-                <img src="glass-1.avif" class="zoom-img">
+                
+            <div class="col-3">  
+                <img src="glass-1.avif" class="zoom-img" onclick="openFullscreen(this.src)" >
             </div>
 
             <div class="col-3">
-                <img src="glass-4.avif" class="zoom-img">
+                <img src="glass-2.jpg" class="zoom-img" onclick="openFullscreen(this.src)" >
+            </div>
+
+            <div class="col-3">
+                <img src="glass-4.avif" class="zoom-img"onclick="openFullscreen(this.src)">
             </div>
             
-            <div class="col-3">
-                <img src="glass-2.jpg" class="zoom-img">
-            </div>
-
+             <h1> PIN: GLASS GARDEN  </h1> <a href="https://maps.app.goo.gl/p8Zz3GUWSZ36H6CB6" class="btn"> Location &#8594; </a>  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.644193954177!2d121.07937997587469!3d14.619333676616218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b820feb97077%3A0x112a1457a9504408!2sGlass%20Garden%20Events%20Venue!5e0!3m2!1sen!2sph!4v1750788020547!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         
         </div>
     </div>
+    <br>
+    <br>
+    </div>
+
     <!-- featured products ATTIRE -->
-     
+     <div class="categories">
      <div id="featured" class="small-container">
         <h2 class="title"> DRESS CODE </h2>
+        <h1> ATTIRE FOR EVENT </h1>
+            <CENter><p>I respectfully request that you dress in accordance with the <br> color scheme, and kindly ask that you adhere to this guideline.
+            <br></CENter>
+            <br>
+            <br>
+                
         <div class="row">
             <div class="col-4">
-                <img src="images/product-1.jpg">
+                <img src="attire.jpg" onclick="openFullscreen(this.src)">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                  <i class="fa fa-star"></i>
@@ -105,7 +161,7 @@
                 <p>$50.00</p>
             </div>
             <div class="col-4">
-                <img src="images/product-2.jpg">
+                <img src="beige.webp">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
                  <i class="fa fa-star"></i>
@@ -128,18 +184,9 @@
                 </div>
                 <p>$50.00</p>
             </div>
-            <div class="col-4">
-                <img src="images/product-4.jpg">
-                <h4>Red Printed T-shirt</h4>
-                <div class="rating">
-                 <i class="fa fa-star"></i>
-                 <i class="fa fa-star"></i>
-                 <i class="fa fa-star"></i>
-                 <i class="fa fa-star-o"></i>
-                 <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
+           
             </div>
+        </div>
         </div>
         <h2 id="invite" class="title">Latest Products</h2>
         <div class="row">
@@ -418,6 +465,21 @@
         MenuItems.style.maxHeight = "0px";
     }
     }
+
+    
  </script>
+ <!-- this is the zoom image -->
+ </styl>
+
+<script>
+  function openFullscreen(src) {
+    document.getElementById("fullscreenImage").src = src;
+    document.getElementById("fullscreenOverlay").classList.add("show");
+  }
+
+  function closeFullscreen() {
+    document.getElementById("fullscreenOverlay").classList.remove("show");
+  }
+</script>
 </body>
 </html>
