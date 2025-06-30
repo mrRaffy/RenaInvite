@@ -8,6 +8,24 @@ html {
     box-sizing: border-box;
 
 }
+/* Neon Text */ 
+
+
+.neon-text {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    }
+    100% {
+        text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
+    }
+}
 body{
     font-family: 'Poppins', sans-serif;
 }
@@ -47,6 +65,7 @@ p{
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
+    
 }   
 .col-2 {
     max-width: 50%;
@@ -116,12 +135,22 @@ p{
 }
 .col-4{
     flex-basis: 25%;
-    padding: 10px;
+    padding: 1px;
     min-width: 200px;
     margin-bottom: 50px;
     transition: transform 0.5s;
 }
 .col-4 img{
+    width: 100%;
+}
+.col-45{
+    flex-basis: 50%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+.col-45 img{
     width: 100%;
 }
 .title {
@@ -327,4 +356,5 @@ ul{
     .col-2, .col-3, .col-4{
         flex-basis: 100%
     }
+    
 }
