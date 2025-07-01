@@ -57,10 +57,22 @@
   padding: 0;
   overflow: hidden;
 }
+ .gift-box {
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    max-width: 500px;
+    margin: 50px auto;
+    border-radius: 16px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #333;
+  }
 </style>
 
 <body>
-    
+
 <div class="overlay" id="fullscreenOverlay" onclick="closeFullscreen()">
   <button class="back-button" onclick="closeFullscreen()">← Back</button>
   <img id="fullscreenImage" src="" alt="Fullscreen View">
@@ -75,21 +87,23 @@
 
         <nav>
             <ul id="MenuItems">
-                <li><a href="">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#Event">Event Place</a></li>
                 <li><a href="#featured">Attire</a></li>
                 <li><a href="#Eighteens">Eighteens</a></li>
+                <li><a href="#gift">Gift Guide</a></li>
         </nav>
         <img src="images/menu.png" class="menu-icon"
         onclick="menutoggle()">
     </div>
-    <div class="row">
+    <div id="home" class="row">
         <div class="col-2">
             <div class="body1"> <div class="neon-container"><h1 class="neon-text"> RENALYN <br>@18 Birthday</h1> </div></div> 
             <p>Join us as we celebrate the 18th birthday of Renalyn.<br>
                 Let’s make this milestone magical with laughter, love, <br> and unforgettable memories!</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrkNP4b9RttjtOCQNGc6J5ZQsOJVZQtnatpi3ddMbhFPUQxw/viewform?usp=dialog" class="btn"> RSPV NOW &#8594; </a> 
             
+                
         </div>
         <div class="col-2"> 
             <!-- rena's picture -->
@@ -132,15 +146,15 @@
         <div class="small-container">
             <div class="row">
                 
-            <div class="col-3">  
+            <div class="col-30">  
                 <img src="glass-1.avif" class="zoom-img" width="100" onclick="openFullscreen(this.src)" >
             </div>
 
-            <div class="col-3">
+            <div class="col-30">
                 <img src="glass-2.jpg" class="zoom-img" onclick="openFullscreen(this.src)" >
             </div>
 
-            <div class="col-3">
+            <div class="col-30">
                 <img src="glass-4.avif" class="zoom-img"onclick="openFullscreen(this.src)">
             </div>
             
@@ -155,7 +169,32 @@
 
 
 
-    <!-- featured products ATTIRE -->
+    <!-- featured products GIFT GUIDE -->
+     <div class="categories">
+     <div id="gift" class="small-container">
+        <h2 class="title"> GIFT GUIDE </h2>
+       <div class="gift-box"> <h1> GIFT GUIDE FOR RENALYN </h1>
+           <div class="gift-box"> <CENter><p>As we gather to celebrate a young woman stepping beautifully into adulthood, we are deeply grateful for the love and thoughtfulness that surrounds her. Many of you have kindly asked what might delight our 
+                debutant on her special day and so we offer this gentle guide. </p></CENter>
+        <div class="row">
+<div class="gift-box">
+  <p>
+    👗 <strong>Clothing Size:</strong> Small to Medium<br>
+    👠 <strong>Shoe Size:</strong> 36 – 37<br><br>
+    Monetary gifts are also sincerely appreciated. Thank you for your thoughtfulness. 💖
+  </p>
+</div>
+</div>
+           <!-- <div class="col-45">
+                <img src="attire.jpg"  onclick="openFullscreen(this.src)">
+                <h3>ATTIRE</h3>
+            </div>
+         -->
+           
+            </div>
+        </div>
+        </div>
+          <!-- featured products ATTIRE -->
      <div class="categories">
      <div id="featured" class="small-container">
         <h2 class="title"> DRESS CODE </h2>

@@ -123,8 +123,17 @@ p{
     min-width: 250px;
     margin-bottom: 30px;
 }
-.col-3 img{
+.col-30 img{
     width: 300px;
+    background-color: white;      /* white background */
+    padding: 20px;                /* space around the image */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* soft shadow */
+    display: flex;
+    justify-content: center;      /* center image horizontally */
+    align-items: center;          /* center image vertically */
+    border-radius: 12px;          /* optional: rounded corners */
+    max-width: 400px;             /* optional: limit box width */
+    margin: 40px auto;  
 }
 /* end of event */
 .small-container{
